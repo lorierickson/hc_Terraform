@@ -1,6 +1,6 @@
 # Getting Started with Terraform
 
-Terraform is the most popular language for defining and provisioning infrastructure as code (IaC). In this guide, you'll learn to install Terraform, to configure and provision resources, and to destroy resources that you no longer need.
+Terraform is the most popular language for defining and provisioning infrastructure as code (IaC). In this guide, you'll learn to install Terraform, configure and provision infrastructure resources, and destroy infrastructure that you no longer need.
 
 ## Prerequisites 
  - Download the Terraform binary package for your operating system and architecture from [Terraform.io](https://www.terraform.io/downloads.html).
@@ -11,7 +11,7 @@ Terraform is the most popular language for defining and provisioning infrastruct
 
 First, visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary package for your operating system and architecture. 
 
-To install Terraform, unzip the package
+To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH`.
 With Terraform installed, let's dive right into it and start creating some infrastructure.
 
 We recommend that you create a new directory on their local machine and create Terraform configuration code inside it.
