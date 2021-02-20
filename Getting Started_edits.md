@@ -1,14 +1,19 @@
 # Getting Started with Terraform
 
-Terraform is the most popular langauge for defining and provisioning infrastructure as code (IaC).
+Terraform is the most popular language for defining and provisioning infrastructure as code (IaC). In this guide, you'll learn to install Terraform, to configure and provision resources, and to destroy resources that you no longer need.
+
+## Prerequisites 
+ - Thing 1
+ - Thing 2
+
 
 ## Install Terraform
 
-To install Terraform, visit [Terraform.io](https://www.terraform.io/downloads.html) and download the compressed binary executable file for your system.
+To install Terraform, visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary for your operating system and architecture.
 
 With Terraform installed, let's dive right into it and start creating some infrastructure.
 
-Most guys find it easiest to create a new directory on their local machine and create Terraform configuration code inside it.
+We recommend that you create a new directory on their local machine and create Terraform configuration code inside it.
 
 ```shell
 $ mkdir terraform-demo
@@ -56,10 +61,18 @@ $ terraform apply
 
 The command will take up to a few minutes to run and will display a message indicating that the resource was created.
 
+## Destroy infrastructure
+
 Finally, destroy the infrastructure.
 
 ```shell
 $ terraform destroy
 ```
 
-Look for a message are the bottom of the output asking for confirmation. Type `yes` and hit ENTER. Terraform will destroy the resources it had created earlier.
+Look for a message are the bottom of the output asking for confirmation. Type `yes` and press ENTER. Terraform will destroy the resources it had created earlier.
+
+## Next steps
+
+Now you know how to configure and provision resources using hard-coded values. In the next guide, you'll learn how to use variables to 
+
+
