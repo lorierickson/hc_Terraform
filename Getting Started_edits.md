@@ -99,7 +99,7 @@ Do you want to perform these actions?
 
   Enter a value:
 ```
-Type `yes` to apply and perform the actions and create the resources.
+Type `yes` and press ENTER to create the resources. 
 
 ```shell
 docker_image.nginx: Creating...
@@ -112,7 +112,9 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 ## Destroy infrastructure
 
-Finally, destroy the infrastructure to remove the resources that were created by this configuration.
+Although you probably won't use the `destroy` command in production very much, it's useful in test and learning scenarios to remove infrastructure resources that you no longer need.
+
+To destroy the infrastructure that this configuration created, .
 
 ```shell
 $ terraform destroy
