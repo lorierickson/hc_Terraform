@@ -1,6 +1,6 @@
 # Getting Started with Terraform
 
-Terraform is the most popular language for defining and provisioning infrastructure as code (IaC). In this guide, you'll learn to install Terraform, configure and provision infrastructure resources, and destroy infrastructure that you no longer need.
+Terraform is the most popular language for defining and provisioning infrastructure as code (IaC). In this guide, you'll learn to install Terraform, configure and provision infrastructure resources using Docker nginx, and destroy infrastructure that you no longer need.
 
 ## Prerequisites 
  - Visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary package for your operating system and architecture. 
@@ -11,7 +11,7 @@ Terraform is the most popular language for defining and provisioning infrastruct
 
 To install Terraform, unzip the Terraform binary package that you downloaded and put the binary in a directory that is in your system's `PATH` environment variable. 
 
-Open a terminal session and verify installation success by typing `terraform version`. The output for a successful installation shows the Terraform version.
+Next, open a terminal session and verify installation success by typing `terraform version`. The output for a successful installation shows the Terraform version.
 
 ```shell
 Terraform v0.14.7
@@ -74,13 +74,13 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-After the configuration directory is initialized, you can provision the resources using the `apply` command.
+After the configuration directory is initialized, use the `apply` command to create the resources. 
 
 ```shell
 $ terraform apply
 ```
 
-The command may take up to a few minutes to run and will display a message indicating that the resource was created. The output will show you the changes that are to be made to the resources, and asks whether you want to perform the actions. 
+The `apply` command scans the current directory for configuration files, and may take a few minutes to run. Terraform summarizes the configuration plan, and asks whether you want to perform the actions. 
 
 ```shell
  # docker_image.nginx will be created
@@ -99,7 +99,7 @@ Do you want to perform these actions?
 
   Enter a value:
 ```
-Type `yes` and press ENTER to create the resources. 
+Type `yes` and press ENTER to create the resources.
 
 ```shell
 docker_image.nginx: Creating...
