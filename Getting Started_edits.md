@@ -80,7 +80,7 @@ After the configuration directory is initialized, use the `apply` command to cre
 $ terraform apply
 ```
 
-The `apply` command scans the current directory for configuration files, and may take a few minutes to run. Terraform summarizes the configuration plan, and asks whether you want to perform the actions. 
+The `apply` command scans the current directory for configuration files, and may take a few minutes to run. Terraform summarizes the configuration plan and asks whether you want to perform the actions. 
 
 ```shell
  # docker_image.nginx will be created
@@ -112,15 +112,36 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 ## Destroy infrastructure
 
-Although you probably won't use the `destroy` command in production very much, it's useful in test and learning scenarios to remove infrastructure resources that you no longer need.
-
-To destroy the infrastructure that this configuration created, .
+Although you probably won't use the `destroy` command frequently in production, it's useful in test, development, and learning scenarios to remove infrastructure resources that you no longer need.
 
 ```shell
 $ terraform destroy
 ```
 
+  # docker_image.nginx will be destroyed
+  - resource "docker_image" "nginx" {
+      - id     = "sha256:35c43ace9216212c0f0e546a65eec93fa9fc8e96b25880ee222b7ed2ca1d2151nginx:latest" -> null
+      - latest = "sha256:35c43ace9216212c0f0e546a65eec93fa9fc8e96b25880ee222b7ed2ca1d2151" -> null
+      - name   = "nginx:latest" -> null
+    }
+
+Plan: 0 to add, 0 to change, 2 to destroy.
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value:
+
 Look for a message at the bottom of the output asking for confirmation. Type `yes` and press ENTER. Terraform will destroy the resources it had created earlier.
+
+docker_container.nginx: Destroying... [id=f1a277895a26b9198721f94874c947f8728cc893c565cc7300a1eb2a25363cbe]
+docker_container.nginx: Destruction complete after 2s
+docker_image.nginx: Destroying... [id=sha256:35c43ace9216212c0f0e546a65eec93fa9fc8e96b25880ee222b7ed2ca1d2151nginx:latest]
+docker_image.nginx: Destruction complete after 0s
+
+Destroy complete! Resources: 2 destroyed.
+
 
 ## Next steps
 
