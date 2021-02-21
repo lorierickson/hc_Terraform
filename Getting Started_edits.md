@@ -13,29 +13,30 @@ First, visit [Terraform.io](https://www.terraform.io/downloads.html) and downloa
 
 To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH` environment variable. 
 
-Verify installation success by typing `terraform version`. The output will show the Terraform version that you installed.
+Verify installation success by typing `terraform version`. The output for a successful installation shows the Terraform version.
 
 ```shell
 Terraform v0.14.7
 ```
-Now you can define and provision your infrastructure. 
 
 ## Build infrastructure
 
-We recommend that you create a new directory on your local machine and create Terraform configuration code inside it. Create a demo directory, and change to the new directory.
+Now that you have Terraform installed, you can define and provision your infrastructure. 
+
+We recommend that you create a new directory on your local machine and create Terraform configuration code inside it. For this guide, create a `terraform-demo` directory, and change to the new directory.
 
 ```shell
 $ mkdir terraform-demo
 $ cd terraform-demo
 ```
 
-Next, create a file for your Terraform configuration code. The `.tf` extension indicates that this is a Terraform configuration file. 
+Next, create a file for your configuration code. The `.tf` extension indicates that this is a Terraform configuration file. 
 
 ```shell
 $ touch main.tf
 ```
 
-Paste the following lines into the file and save it. The content of the configuration describes infrastructure objects. 
+Paste the following lines into the file and save it. The content of this configuration describes the infrastructure objects that it will create. 
 
 ```hcl
 provider "docker" {
@@ -56,13 +57,14 @@ resource "docker_image" "nginx" {
 }
 ```
 
-Initialize Terraform with the `init` command. The Docker provider will be installed. 
+Initialize the configuration directory using the `init` command. This installs the Docker provider.
 
 ```shell
 $ terraform init
 ```
-Initializing the backend...
-...
+You'll see output similar to the following when the initialization is successful. (If you see error messages, follow the recommended steps to address the issues, and re-run the `init` command.)
+
+```shell
 Terraform has been successfully initialized!
 
 You may now begin working with Terraform. Try running "terraform plan" to see
@@ -74,8 +76,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-You shoud check for any errors. 
-If it ran successfully, provision the resource with the `apply` command.
+After the configuration directory is initialized, you can provision the resources using the `apply` command.
 
 ```shell
 $ terraform apply
