@@ -80,7 +80,7 @@ After the configuration directory is initialized, use the `apply` command to cre
 $ terraform apply
 ```
 
-The `apply` command scans the current directory for configuration files, and may take a few minutes to run. Terraform summarizes the configuration plan and asks whether you want to perform the actions. 
+The `apply` command scans the current directory for configuration (`*.tf`) files, and may take a few minutes to run. Terraform summarizes the configuration plan and asks whether you want to perform the actions. 
 
 ```shell
  # docker_image.nginx will be created
