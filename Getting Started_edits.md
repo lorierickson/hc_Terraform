@@ -118,7 +118,7 @@ Although you probably won't use the `destroy` command frequently in production, 
 $ terraform destroy
 ```
 
-Terraform summarizes which resources will be destroyed and asks whether you want to destroy all resources.
+Terraform summarizes which resources will be destroyed and asks whether you want to destroy all resources listed.
 
 ```shell
   # docker_image.nginx will be destroyed
