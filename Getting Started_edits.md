@@ -151,6 +151,4 @@ Destroy complete! Resources: 2 destroyed.
 
 Now you know how to use Terraform to build and destroy infrastructure resources using hard-coded values. In the next guide, you'll learn how to use variables to extend configuration flexibility and re-use.
 
-For more information, see [Terraform Documentation](https://www.terraform.io/docs/index.html).
-
-
+For more information, browse our [Terraform Tutorials](https://learn.hashicorp.com/terraform) and [Terraform Documentation](https://www.terraform.io/docs/index.html).
