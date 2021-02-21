@@ -11,7 +11,7 @@ Terraform is the most popular language for defining and provisioning infrastruct
 
 To install Terraform, unzip the Terraform binary package that you downloaded and put the binary in a directory that is in your system's `PATH` environment variable. 
 
-Verify installation success by typing `terraform version`. The output for a successful installation shows the Terraform version.
+Open a terminal session and verify installation success by typing `terraform version`. The output for a successful installation shows the Terraform version.
 
 ```shell
 Terraform v0.14.7
@@ -80,7 +80,35 @@ After the configuration directory is initialized, you can provision the resource
 $ terraform apply
 ```
 
-The command will take up to a few minutes to run and will display a message indicating that the resource was created.
+The command may take up to a few minutes to run and will display a message indicating that the resource was created. The output will show you the changes that are to be made to the resources, and asks whether you want to perform the actions. 
+
+```shell
+ # docker_image.nginx will be created
+  + resource "docker_image" "nginx" {
+      + id     = (known after apply)
+      + latest = (known after apply)
+      + name   = "nginx:latest"
+      + output = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value:
+```
+Type `yes` to apply and perform the actions and create the resources.
+
+```shell
+docker_image.nginx: Creating...
+docker_image.nginx: Creation complete after 9s [id=sha256:35c43ace9216212c0f0e546a65eec93fa9fc8e96b25880ee222b7ed2ca1d2151nginx:latest]
+docker_container.nginx: Creating...
+docker_container.nginx: Creation complete after 1s [id=f1a277895a26b9198721f94874c947f8728cc893c565cc7300a1eb2a25363cbe]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+```
 
 ## Destroy infrastructure
 
