@@ -3,15 +3,13 @@
 Terraform is the most popular language for defining and provisioning infrastructure as code (IaC). In this guide, you'll learn to install Terraform, configure and provision infrastructure resources, and destroy infrastructure that you no longer need.
 
 ## Prerequisites 
- - Thing 1
- - Thing 2
+ - Visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary package for your operating system and architecture. 
+ - Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 
 ## Install Terraform
 
-First, visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary package for your operating system and architecture. 
-
-To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH` environment variable. 
+To install Terraform, unzip the Terraform binary package that you downloaded and put the binary in a directory that is in your system's `PATH` environment variable. 
 
 Verify installation success by typing `terraform version`. The output for a successful installation shows the Terraform version.
 
