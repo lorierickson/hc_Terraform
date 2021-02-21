@@ -118,6 +118,9 @@ Although you probably won't use the `destroy` command frequently in production, 
 $ terraform destroy
 ```
 
+Terraform summarizes which resources will be destroyed and asks whether you want to destroy all resources.
+
+```shell
   # docker_image.nginx will be destroyed
   - resource "docker_image" "nginx" {
       - id     = "sha256:35c43ace9216212c0f0e546a65eec93fa9fc8e96b25880ee222b7ed2ca1d2151nginx:latest" -> null
@@ -132,20 +135,21 @@ Do you really want to destroy all resources?
   There is no undo. Only 'yes' will be accepted to confirm.
 
   Enter a value:
+```
+Type `yes` and press ENTER to destroy the resources.
 
-Look for a message at the bottom of the output asking for confirmation. Type `yes` and press ENTER. Terraform will destroy the resources it had created earlier.
-
+```shell
 docker_container.nginx: Destroying... [id=f1a277895a26b9198721f94874c947f8728cc893c565cc7300a1eb2a25363cbe]
 docker_container.nginx: Destruction complete after 2s
 docker_image.nginx: Destroying... [id=sha256:35c43ace9216212c0f0e546a65eec93fa9fc8e96b25880ee222b7ed2ca1d2151nginx:latest]
 docker_image.nginx: Destruction complete after 0s
 
 Destroy complete! Resources: 2 destroyed.
-
+```
 
 ## Next steps
 
-Now you know how to configure and provision resources using hard-coded values. In the next guide, you'll learn how to use variables to ***
+Now you know how to use Terraform to build and destroy infrastructure resources using hard-coded values. In the next guide, you'll learn how to use variables to extend configuration flexibility and re-use.
 
 For more information, see [Terraform Documentation](https://www.terraform.io/docs/index.html).
 
