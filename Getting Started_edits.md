@@ -22,7 +22,7 @@ Now you can define and provision your infrastructure.
 
 ## Build infrastructure
 
-We recommend that you create a new directory on your local machine and create Terraform configuration code inside it.
+We recommend that you create a new directory on your local machine and create Terraform configuration code inside it. Create a demo directory, and change to the new directory.
 
 ```shell
 $ mkdir terraform-demo
@@ -35,7 +35,7 @@ Next, create a file for your Terraform configuration code. The `.tf` extension i
 $ touch main.tf
 ```
 
-Paste the following lines into the file. The content of the configuration describes infrastructure objects. 
+Paste the following lines into the file and save it. The content of the configuration describes infrastructure objects. 
 
 ```hcl
 provider "docker" {
@@ -62,21 +62,7 @@ Initialize Terraform with the `init` command. The Docker provider will be instal
 $ terraform init
 ```
 Initializing the backend...
-
-Initializing provider plugins...
-- Finding latest version of kreuzwerker/docker...
-- Installing kreuzwerker/docker v2.11.0...
-- Installed kreuzwerker/docker v2.11.0 (self-signed, key ID 24E54F214569A8A5)
-
-Partner and community providers are signed by their developers.
-If you'd like to know more about provider signing, you can read about it here:
-https://www.terraform.io/docs/cli/plugins/signing.html
-
-Terraform has created a lock file .terraform.lock.hcl to record the provider
-selections it made above. Include this file in your version control repository
-so that Terraform can guarantee to make the same selections by default when
-you run "terraform init" in the future.
-
+...
 Terraform has been successfully initialized!
 
 You may now begin working with Terraform. Try running "terraform plan" to see
@@ -86,6 +72,7 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
+```
 
 You shoud check for any errors. 
 If it ran successfully, provision the resource with the `apply` command.
@@ -98,7 +85,7 @@ The command will take up to a few minutes to run and will display a message indi
 
 ## Destroy infrastructure
 
-Finally, destroy the infrastructure.
+Finally, destroy the infrastructure to remove the resources that were created by this configuration.
 
 ```shell
 $ terraform destroy
