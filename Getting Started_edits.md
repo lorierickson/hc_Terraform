@@ -11,12 +11,14 @@ Terraform is the most popular language for defining and provisioning infrastruct
 
 First, visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary package for your operating system and architecture. 
 
-To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH` environment variable. Verify installation success by typing `terraform version`. The output will show the Terraform version that was installed.
+To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH` environment variable. 
+
+Verify installation success by typing `terraform version`. The output will show the Terraform version that you installed.
 
 ```shell
 Terraform v0.14.7
 ```
-With Terraform installed, let's dive right into it and start creating some infrastructure.
+Now you can define and provision your infrastructure. 
 
 ## Build infrastructure
 
@@ -27,13 +29,13 @@ $ mkdir terraform-demo
 $ cd terraform-demo
 ```
 
-Next, create a file for your Terraform configuration code. The `.tf` extension indicates that this is a Terraform configuration file.
+Next, create a file for your Terraform configuration code. The `.tf` extension indicates that this is a Terraform configuration file. 
 
 ```shell
 $ touch main.tf
 ```
 
-Paste the following lines into the file.
+Paste the following lines into the file. The content of the configuration describes infrastructure objects. 
 
 ```hcl
 provider "docker" {
@@ -54,7 +56,7 @@ resource "docker_image" "nginx" {
 }
 ```
 
-Initialize Terraform with the `init` command. The AWS provider will be installed. ***AWS??***
+Initialize Terraform with the `init` command. The Docker provider will be installed. 
 
 ```shell
 $ terraform init
