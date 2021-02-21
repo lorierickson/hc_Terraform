@@ -11,12 +11,14 @@ Terraform is the most popular language for defining and provisioning infrastruct
 
 First, visit [Terraform.io](https://www.terraform.io/downloads.html) and download the binary package for your operating system and architecture. 
 
-To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH`. Verify installation success by typing `terraform version`.
+To install Terraform, unzip the package and put the binary in a directory that is in your system's `PATH` environment variable. Verify installation success by typing `terraform version`. The output will show the Terraform version that was installed.
 
 ```shell
 Terraform v0.14.7
 ```
 With Terraform installed, let's dive right into it and start creating some infrastructure.
+
+## Build infrastructure
 
 We recommend that you create a new directory on your local machine and create Terraform configuration code inside it.
 
